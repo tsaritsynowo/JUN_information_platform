@@ -1,0 +1,115 @@
+#loginPage {
+    background-image: linear-gradient(45deg, #176871 50%, #0a8585 50%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff9e;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#loginBox form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#usernameInput, #passwordInput {
+    display: block;
+    padding: 10px;
+    width: 200px;
+    border: none;
+    background-color: #ffffff00;
+}
+
+#usernameLayout, #passwordLayout {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+
+#usernameLayout p, #passwordLayout p {
+    display: block;
+    width: 50px;
+    margin-inline: 15px;
+    margin-block: 10px;
+    color: #00000040;
+    text-align: center;
+}
+
+#usernameLayout {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: 1px solid #00000040;
+    border-bottom: none;
+}
+
+#passwordLayout {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid #00000040;
+}
+
+#loginBtn, #registerBtn {
+    margin: 20px;
+    margin-top: 35px;
+    width: 130px;
+    height: 30px;
+    border: 1px solid #00000040;
+    border-radius: 15px;
+    transition: all, 0.3s;
+}
+
+#loginBtn:hover, #registerBtn:hover {
+    background-color: #00000040;
+    cursor: pointer;
+}
+
+hr {
+    margin-bottom: 30px;
+}
+
+#loginBox > p {
+    color: grey;
+    font-size: small;
+}
+
+#otherLogin {
+    clear: both;
+    overflow: hidden;
+}
+
+#otherLogin li {
+    width: 100px;
+    margin: 10px 20px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#otherLogin svg {
+}
+
+#loginHomeBtm {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 50px;
+ padding: 10px 15px;
+ margin: 10px;
+ border-radius: 20px;
+ background-color: #ffffff9e;
+}
