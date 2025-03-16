@@ -1,38 +1,86 @@
 import { useState } from 'react';
-import filelist from '../../../public/file/filelist.json';
+import competitionlist from '../../../public/file/competitionlist.json';
 
-function Article({id, title, content, date, exist, author}) {
+function Lable() {
+  return (
+    <div className="label">标签</div>
+  );
+}
+
+function Competition({id, name, description, start_date, end_date, level, labeles, content, date, exist}) {
   function openarticle({target}){
-    console.log(target)
     window.open(`${window.location.href}/${target.id}`,'_blank')
   };
+  
+  if (labeles === undefined) {
+    labeles = [];
+  } 
+
+  const labelesHTML = labeles.map((label, index) => {
+    return (
+      <div key={index} className="label">{label}</div>
+    );
+  });
 
   if (exist) {
     return (
-      <div className="article" id={id} onClick={openarticle}>
-        <h2 id={id}>{title}</h2>
-        <samp id={id}>{author}{date}</samp>
-        <p id={id}>{content}</p>
-      </div>
+      <>
+        <div className="competition" id={id} onClick={openarticle}>
+          <h2 id={id}>{name}</h2>
+          <samp id={id}>{start_date}至{end_date}</samp>
+          {labelesHTML}
+          <p id={id}>{description}</p>
+        </div>
+        <hr width="30%" />
+      </>
     );
     } else {
       return (<></>); };
   };
 
-function Aside() {
-  const [status, setStatus] = useState("1");
+function AsideNav() {
+  const [status, setStatus] = useState("competition");
   
   function handleClick({ target }) {
     setStatus(target.id);
   };
 
   return (
-    <aside className="aside">
       <ul>
-        <li id="1" onClick={handleClick} className={(status === "1")? "selected" : ""}>1</li>
-        <li id="2" onClick={handleClick} className={(status === "2")? "selected" : ""}>2</li>
-        <li id="3" onClick={handleClick} className={(status === "3")? "selected" : ""}>3</li>
+        <li id="competition" onClick={handleClick} className={(status === "competition")? "asideNavselected" : ""}>比赛信息</li>
+        <li id="schoolNews" onClick={handleClick} className={(status === "schoolNews")? "asideNavselected" : ""}>学校新闻</li>
       </ul>
+      );
+}
+
+function Search() {
+  return (
+    <div className='search'>
+        <input type="text" placeholder="搜索..." />
+        <input type="button" />
+    </div>
+  );
+  }
+
+function Fliter() {
+  return (
+      <div className="fliter">
+        <h2>筛选</h2>
+        <div className="labelBox">
+          <Lable />
+        </div>
+      </div>
+  );
+  }
+
+function Aside() {
+  return (
+    <aside className="aside">
+      <div>
+        <Search />
+        <AsideNav />
+        <Fliter />
+      </div>
     </aside>
     );
 }
@@ -42,16 +90,18 @@ export default function Container() {
   <>
     <Aside />
     <div className="articleContainer">
-      <Article {...filelist[0]} />
-      <Article {...filelist[1]} />
-      <Article {...filelist[2]} />
-      <Article {...filelist[3]} />
-      <Article {...filelist[4]} />
-      <Article {...filelist[5]} />
-      <Article {...filelist[6]} />
-      <Article {...filelist[7]} />
-      <Article {...filelist[8]} />
-      <Article {...filelist[9]} />
+      <div>
+        <Competition {...competitionlist[0]} />
+        <Competition {...competitionlist[1]} />
+        <Competition {...competitionlist[2]} />
+        <Competition {...competitionlist[3]} />
+        <Competition {...competitionlist[4]} />
+        <Competition {...competitionlist[5]} />
+        <Competition {...competitionlist[6]} />
+        <Competition {...competitionlist[7]} />
+        <Competition {...competitionlist[8]} />
+        <Competition {...competitionlist[9]} />
+      </div>
     </div>
   </>
   );

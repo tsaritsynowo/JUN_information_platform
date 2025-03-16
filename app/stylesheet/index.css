@@ -10,46 +10,127 @@ body {
   display: flex;
 }
 
+/* 以下是header部分样式 */
+
 header {
-  padding-block: 15px;
   background-color: rgb(40, 117, 117);
   width: 100vw;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  transition: all 0.5s;
+  height: 115px;
+  transition: all 0.3s;
 }
 
-.hidden {
-  top: -60px;
+.headerBox {  
+  position: relative;
+  margin-inline: 23vw;
+  min-width: 700px;
+  display: flex;
+}
+
+.logoBox {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transition: all 0.3s;
+}
+
+.logoBox h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.logoBox p {
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 21px;
+}
+
+header nav {
+  position: relative;
+  top: 30px;
+  transition: all 0.3s;
 }
 
 header ul {
-  display: flex;
-  font-size: large;
-  font-weight: 700;
+  margin-block: 15px;
+  font-size: medium;
+  font-weight: 500;
+  clear: both;
+  overflow: hidden;
 }
 
 header li {
-  margin-left: 100px;
+  float: left;
+  margin-inline: 25px;
   color: white;
+  transition: all 0.2s;
 }
+
+header li::after {
+  content: "";
+  display: block;
+  margin-top: 4px;
+  height: 3px;
+  width: 0px;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+header li:hover::after {
+  width: 100%;
+}
+
+header .selected::after {
+  content: "";
+  display: block;
+  margin-top: 4px;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+}
+
+#headerdown {
+  background-color: rgba(40, 117, 117, 0.859);
+  height: 58px;
+}
+
+#logoBoxdown {
+  position: absolute;
+  top: -100px;
+}
+
+#headerBoxopen {
+  justify-content: space-between;
+}
+
+#headerBoxdown {
+  justify-content: end;
+}
+
+#navdown {
+  position: absolute;
+  top: 0px;
+}
+
+/* 以下是侧栏部分样式 */
 
 .aside {
   margin: 20px;
   padding: 10px;
   width: 240px;
   position: relative;
-  top : 60px
+  top : 140px;
 }
 
-.aside ul {
-
+.aside>div {
+  position: sticky;
+  top: 100px;
 }
 
 .aside li {
-  margin-left: 10px;
   margin-block: 20px;
   padding-block: 10px;
   padding-left: 20px;
@@ -61,13 +142,82 @@ header li {
   transition: all 0.2s;
 }
 
-.aside li:hover {
-  background-color: rgba(240, 240, 240, 0.933);
+.aside .asideNavselected {
+  background-color: rgba(228, 228, 228, 0.933);
 }
 
-.selected {
-  background-color: rgba(240, 240, 240, 0.933);
+.aside .fliter {
+  margin: 5px;
+  margin-top: 30px ;
+  padding: 10px;
+  border: 1px solid rgba(228, 228, 228, 0.933);
+  border-radius: 20px;
+  clear: both;
+  overflow: hidden;
 }
+
+.aside .search {
+  margin-block: 5px;
+  border: 1px solid rgba(228, 228, 228, 0.933);
+  border-radius: 25px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(228, 228, 228, 0.933)
+}
+
+.aside input[type="button"] {
+  background-color: rgb(40, 117, 117);
+  border: none;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.aside input[type="text"] {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  width: 80%;
+  height: 30px;
+}
+
+.aside li:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.aside h2 {
+  margin-inline: 5px;
+  margin-bottom: 12px;
+  margin-top: 5px;
+}
+
+.aside h2::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: rgb(40, 117, 117);
+  height: 2px;
+  margin-top: 10px;
+}
+
+.aside .label {
+  float: left;
+  height: 20px;
+  padding: 7px;
+  padding-top: 5px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: rgba(228, 228, 228, 0.933);
+  transition: all 0.2s;
+}
+
+.aside .label:hover {
+  background-color: rgb(40, 117, 117);
+  color: white;
+}
+
+/* 以下是news默认页面主体样式 */
 
 .articleContainer {
   padding: 40px;
@@ -76,6 +226,52 @@ header li {
   flex-direction: column;
   background-color: rgba(240, 240, 240, 0.933);
   min-height: 100vh;
+}
+
+.articleContainer>div {
+  position: relative;
+  top: 90px;
+}
+
+.competition {
+  margin: 20px;
+  clear: both;
+  overflow: hidden;
+}
+
+.competition h2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 5px;
+  background-color: rgb(40, 117, 117);
+  height: 100%;
+  border-radius: 2.5px;
+}
+
+.competition h2 {
+  position: relative;
+  padding-left: 15px;
+}
+
+.competition samp {
+  float: left;
+  font-size: small;
+  font-weight: 500;
+  font-family: "Microsoft YaHei";
+  color: rgb(0, 0, 0);
+  background-color: rgba(40, 117, 117, 0.284);
+  padding-inline: 20px;
+  padding-bottom: 7px;
+  padding-top: 6px;
+  border-radius: 20px;
+}
+
+.competition p {
+  text-indent: 20px;
+  float: left;
 }
 
 .pageContainer {
@@ -93,10 +289,6 @@ header li {
   width: calc(100% - 300px);
   background-color: rgba(240, 240, 240, 0.933);
   min-height: 100vh;
-}
- 
-.article {
-  margin: 20px;
 }
 
 .goodsContainer ul {

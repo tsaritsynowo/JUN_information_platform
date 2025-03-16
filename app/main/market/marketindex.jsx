@@ -30,20 +30,39 @@ function Goods() {
   );
 }
 
-function Aside() {
-  const [status, setStatus] = useState("secondhand");
+function Lable() {
+  return (
+    <div className="label">标签</div>
+  );
+}
 
-  function handleClick({ target }) {
-    setStatus(target.id);
-  };
-  
+function Search() {
+  return (
+    <div className='search'>
+        <input type="text" placeholder="搜索..." />
+        <input type="button" />
+    </div>
+  );
+  }
+
+function Fliter() {
+  return (
+      <div className="fliter">
+        <h2>筛选</h2>
+        <div className="labelBox">
+          <Lable />
+        </div>
+      </div>
+  );
+  }
+
+function Aside() {
   return (
     <aside className="aside">
-      <ul>
-        <li id="secondhand" onClick={handleClick} className={(status === "secondhand")? "selected" : ""}>二手</li>
-        <li id="help" onClick={handleClick} className={(status === "help")? "selected" : ""}>跑腿</li>
-        <li id="course" onClick={handleClick} className={(status === "course")? "selected" : ""}>代课</li>
-      </ul>
+      <div>
+        <Search />
+        <Fliter />
+      </div>
     </aside>
     );
 }

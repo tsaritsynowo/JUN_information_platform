@@ -1,0 +1,16 @@
+[
+    {
+        "id": "com1",
+        "name": "Competition 1",
+        "description": "This is the first competition",
+        "start_date": "2021-01-01",
+        "end_date": "2021-01-31",
+        "level": "intermediate",
+        "labeles": [
+            "label1",
+            "label2"
+        ],
+        "content": "This is the content of the competition 1",
+        "exist": true
+    }
+]
