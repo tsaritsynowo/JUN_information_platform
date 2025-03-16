@@ -167,12 +167,19 @@ header .selected::after {
   background-color: rgba(228, 228, 228, 0.933)
 }
 
-.aside input[type="button"] {
+.aside button {
   background-color: rgb(40, 117, 117);
   border: none;
   border-radius: 15px;
   width: 30px;
   height: 30px;
+}
+
+.aside button::before {
+  content: "\f002";
+  font-family: FontAwesome;
+  color: white;
+  font-weight: 100;
 }
 
 .aside input[type="text"] {
@@ -201,7 +208,7 @@ header .selected::after {
   margin-top: 10px;
 }
 
-.aside .label {
+.aside .labelstyle1 {
   float: left;
   height: 20px;
   padding: 7px;
@@ -212,7 +219,7 @@ header .selected::after {
   transition: all 0.2s;
 }
 
-.aside .label:hover {
+.aside .labelstyle1:hover {
   background-color: rgb(40, 117, 117);
   color: white;
 }
@@ -271,6 +278,7 @@ header .selected::after {
   padding-bottom: 7px;
   padding-top: 6px;
   margin-right: 7px;
+  margin-bottom: 7px;
   border-radius: 20px;
 }
 

@@ -40,7 +40,7 @@ function Search() {
   return (
     <div className='search'>
         <input type="text" placeholder="搜索..." />
-        <input type="button" />
+        <button type="button"><i></i></button>
     </div>
   );
   }

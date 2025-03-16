@@ -8,9 +8,38 @@
         "level": "intermediate",
         "labeles": [
             "label1",
-            "label2"
+            "label2",
+            "label3"
         ],
         "content": "This is the content of the competition 1",
+        "exist": true
+    },
+    {
+        "id": "com2",
+        "name": "Competition 2",
+        "description": "This is the second competition",
+        "start_date": "2021-02-01",
+        "end_date": "2021-02-28",
+        "level": "advanced",
+        "labeles": [
+            "label3",
+            "label4"
+        ],
+        "content": "This is the content of the competition 2",
+        "exist": true
+    },
+    {
+        "id": "com3",
+        "name": "Competition 3",
+        "description": "This is the third competition",
+        "start_date": "2021-03-01",
+        "end_date": "2021-03-31",
+        "level": "beginner",
+        "labeles": [
+            "label5",
+            "label6"
+        ],
+        "content": "This is the content of the competition 3",
         "exist": true
     }
 ]

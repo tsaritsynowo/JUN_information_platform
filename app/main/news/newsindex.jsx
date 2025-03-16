@@ -1,11 +1,22 @@
-import { useState } from 'react';
+import { useContext, useState, createContext } from 'react';
 import competitionlist from '../../../public/file/competitionlist.json';
+import labellistorigin from '../../../public/file/labellist.json';
+
+const labellist = createContext(labellistorigin);
 
 // 以下是侧栏标签组件
 
 function Lable() {
+  const labelarr = useContext(labellist)
+
+  const labelarrHTML = labelarr.map((label, index) => {
+    return <div id={index} className="labelstyle1">{label}</div>
+  });
+
   return (
-    <div className="label">标签</div>
+    <>
+       {labelarrHTML}
+    </>
   );
 }
 
@@ -65,7 +76,9 @@ function Search() {
   return (
     <div className='search'>
         <input type="text" placeholder="搜索..." />
-        <input type="button" />
+        <button type="button">
+          <i></i>
+        </button>
     </div>
   );
   }
